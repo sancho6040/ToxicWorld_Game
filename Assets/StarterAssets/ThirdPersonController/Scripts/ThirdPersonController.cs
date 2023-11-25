@@ -104,6 +104,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
+        private InventorySystem _inventorySystem;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -112,6 +113,11 @@ namespace StarterAssets
 
         [SerializeField]
         private bool _canMove = true;
+
+        public bool _cameraRotation = true;
+
+        public bool bCanPickup = false;
+
 
         private bool IsCurrentDeviceMouse
         {
@@ -142,6 +148,7 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
+            _inventorySystem = GetComponent<InventorySystem>();
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
@@ -197,7 +204,7 @@ namespace StarterAssets
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
-            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
+            if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition && _cameraRotation)
             {
                 //Don't multiply mouse input by Time.deltaTime;
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
@@ -288,28 +295,34 @@ namespace StarterAssets
         private void actions()
         {
             //pick up items
-            if (_input.pickUp && Grounded)
+            if (_input.pickUp && Grounded && bCanPickup)
             {
-                Debug.Log("E");
+                bCanPickup = false;
                 _canMove = false;
                 _speed = 0.0f;
                 if (_hasAnimator)
                 {
+                    _animator.SetFloat(_animIDSpeed, 0.0f);
                     _animator.SetTrigger("PickUp");
                 }
-                _input.pickUp = false;
             }
+            _input.pickUp = false;
         }
 
+        //it's called from the animation
         public void ItemPickUp()
         {
-            //more code....
+            if(_inventorySystem && _inventorySystem.propToPickUp)
+            {
+                _inventorySystem.setKeyUIstate(false);
+                _inventorySystem.propToPickUp.PickupItem();
+            }
             _canMove = true;
         }
 
         private void JumpAndGravity()
         {
-            if (Grounded && _canMove)
+            if (Grounded)
             {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
@@ -328,7 +341,7 @@ namespace StarterAssets
                 }
 
                 // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                if (_input.jump && _jumpTimeoutDelta <= 0.0f && _canMove)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
