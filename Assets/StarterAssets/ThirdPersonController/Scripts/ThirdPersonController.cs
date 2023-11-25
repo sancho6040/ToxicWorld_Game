@@ -312,12 +312,12 @@ namespace StarterAssets
         //it's called from the animation
         public void ItemPickUp()
         {
-            if(_inventorySystem != null && _inventorySystem.propToPickUp != null)
+            if(_inventorySystem && _inventorySystem.propToPickUp)
             {
+                _inventorySystem.setKeyUIstate(false);
                 _inventorySystem.propToPickUp.PickupItem();
             }
             _canMove = true;
-            bCanPickup = true;
         }
 
         private void JumpAndGravity()

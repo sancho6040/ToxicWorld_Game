@@ -50,7 +50,7 @@ public class InventorySystem : MonoBehaviour
     {
         if (other.CompareTag("Prop"))
         {
-            _KeyUI.SetActive(true);
+            setKeyUIstate(true);
             propToPickUp = other.gameObject.GetComponent<Prop>();
             _thirdPersonController.bCanPickup = true;
         }
@@ -61,9 +61,14 @@ public class InventorySystem : MonoBehaviour
     {
         if (other.CompareTag("Prop"))
         {
-            _KeyUI.SetActive(false);
+            setKeyUIstate(false);
             propToPickUp = null;
             _thirdPersonController.bCanPickup = false;
         }
+    }
+
+    public void setKeyUIstate(bool newState)
+    {
+        _KeyUI.SetActive(newState);
     }
 }
