@@ -104,6 +104,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
+        private InventorySystem _inventorySystem;
         private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
@@ -114,6 +115,9 @@ namespace StarterAssets
         private bool _canMove = true;
 
         public bool _cameraRotation = true;
+
+        public bool bCanPickup = false;
+
 
         private bool IsCurrentDeviceMouse
         {
@@ -144,6 +148,7 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
+            _inventorySystem = GetComponent<InventorySystem>();
 #if ENABLE_INPUT_SYSTEM 
             _playerInput = GetComponent<PlayerInput>();
 #else
@@ -290,23 +295,29 @@ namespace StarterAssets
         private void actions()
         {
             //pick up items
-            if (_input.pickUp && Grounded)
+            if (_input.pickUp && Grounded && bCanPickup)
             {
-                Debug.Log("E");
+                bCanPickup = false;
                 _canMove = false;
                 _speed = 0.0f;
                 if (_hasAnimator)
                 {
+                    _animator.SetFloat(_animIDSpeed, 0.0f);
                     _animator.SetTrigger("PickUp");
                 }
-                _input.pickUp = false;
             }
+            _input.pickUp = false;
         }
 
+        //it's called from the animation
         public void ItemPickUp()
         {
-            //more code....
+            if(_inventorySystem != null && _inventorySystem.propToPickUp != null)
+            {
+                _inventorySystem.propToPickUp.PickupItem();
+            }
             _canMove = true;
+            bCanPickup = true;
         }
 
         private void JumpAndGravity()
