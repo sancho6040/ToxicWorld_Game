@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Disolve : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Material DisolveMaterial;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
