@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManipularVida : MonoBehaviour
+public class Curacion : MonoBehaviour
 {
     VidaPlayer playerVida;
     public float cantidadVida;
@@ -11,7 +11,7 @@ public class ManipularVida : MonoBehaviour
     {
         playerVida = GameObject.FindWithTag("Player").GetComponent<VidaPlayer>();
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
