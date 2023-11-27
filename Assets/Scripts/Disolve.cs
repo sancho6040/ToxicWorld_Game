@@ -27,6 +27,11 @@ public class Disolve : MonoBehaviour
             ValueToLerp = Mathf.Lerp(StartValue, EndValue, timeElapsed / lerpDuration);
             timeElapsed += Time.deltaTime;
             m_Material.SetFloat("_DessolveAmount", ValueToLerp);
+
+            if(ValueToLerp == 1)
+            {
+                Destroy(gameObject);
+            }
         }
         /* if (Input.GetKeyDown(KeyCode.A))
         {
