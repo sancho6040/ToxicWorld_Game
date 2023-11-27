@@ -9,17 +9,19 @@ using UnityEngine.Rendering.Universal;
 public class VidaPlayer : MonoBehaviour
 {
     public float vida = 100;
+    public float conta = 0;
     public Canvas canva;
     public Image barraVida;
+    public Image barraConta;
     public GameObject player;
     public GameObject camara;
     public GameObject volumen;
     public Volume volumeScene;
     public VolumeProfile profiles;
-    public Vignette vignette;
-    public ChromaticAberration chromatic;
-    public FilmGrain grain;
-    public DepthOfField depth;
+    private Vignette vignette;
+    private ChromaticAberration chromatic;
+    private FilmGrain grain;
+    private DepthOfField depth;
 
     void Start()
     {
@@ -78,7 +80,42 @@ public class VidaPlayer : MonoBehaviour
         if (vida <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(1);
         }
+
+        conta = Mathf.Clamp(conta, 0, 100);
+        barraConta.fillAmount = conta / 100;
+
+        if (conta <= 0)
+        {
+            
+        }
+
+        if (conta <= 20)
+        {
+
+        }
+
+        if (conta <= 40)
+        {
+
+        }
+
+        if (conta <= 60)
+        {
+
+        }
+
+        if (conta <= 80)
+        {
+
+        }
+
+        if (conta <= 100)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(1);
+        }
+
     }
 }
