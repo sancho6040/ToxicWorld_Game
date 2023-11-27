@@ -246,10 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -266,19 +266,19 @@ Canvas:
   m_GameObject: {fileID: 317053128}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1080549126}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: -1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &317053132
 RectTransform:
@@ -999,7 +999,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3497971dbcd154fb62534bbe0839d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidad: -10
+  cantidadVida: -0.1
+  cantidadConta: 0.1
 --- !u!1 &1585307168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1170,6 @@ GameObject:
   - component: {fileID: 1717103736}
   - component: {fileID: 1717103735}
   - component: {fileID: 1717103734}
-  - component: {fileID: 1717103738}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1265,19 +1265,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1717103738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717103733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f6dcaa4d53b9040b08b01caa6f55a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cantidad: 10
 --- !u!1 &1851357248
 GameObject:
   m_ObjectHideFlags: 0
