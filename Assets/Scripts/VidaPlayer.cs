@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
@@ -80,41 +78,41 @@ public class VidaPlayer : MonoBehaviour
         if (vida <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
 
         conta = Mathf.Clamp(conta, 0, 100);
         barraConta.fillAmount = conta / 100;
 
-        if (conta <= 0)
-        {
-            
-        }
-
-        if (conta <= 20)
+        if (conta >= 0)
         {
 
         }
 
-        if (conta <= 40)
+        if (conta >= 20)
         {
 
         }
 
-        if (conta <= 60)
+        if (conta >= 40)
         {
 
         }
 
-        if (conta <= 80)
+        if (conta >= 60)
         {
 
         }
 
-        if (conta <= 100)
+        if (conta >= 80)
+        {
+
+        }
+
+        if (conta >= 100)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
 
     }

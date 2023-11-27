@@ -5,16 +5,18 @@ using UnityEngine;
 public class ManipularVida : MonoBehaviour
 {
     VidaPlayer playerVida;
-    public int cantidad;
+    public float cantidadVida;
+    public float cantidadConta;
     void Start()
     {
         playerVida = GameObject.FindWithTag("Player").GetComponent<VidaPlayer>();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            playerVida.vida += cantidad;
+            playerVida.vida += cantidadVida;
+            playerVida.conta += cantidadConta;
             //Destroy(gameObject);
         }
     }

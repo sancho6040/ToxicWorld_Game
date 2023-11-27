@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManipularContaminacion : MonoBehaviour
+public class Curacion : MonoBehaviour
 {
     VidaPlayer playerVida;
-    public int cantidad;
+    public float cantidadVida;
+    public float cantidadConta;
     void Start()
     {
         playerVida = GameObject.FindWithTag("Player").GetComponent<VidaPlayer>();
@@ -14,7 +15,8 @@ public class ManipularContaminacion : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerVida.conta += cantidad;
+            playerVida.vida += cantidadVida;
+            playerVida.conta += cantidadConta;
             //Destroy(gameObject);
         }
     }
