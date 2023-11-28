@@ -17,7 +17,7 @@ public class Curacion : MonoBehaviour
         {
             playerVida.vida += cantidadVida;
             playerVida.conta += cantidadConta;
-            //Destroy(gameObject);
+          //  Destroy(gameObject);
         }
     }
 }

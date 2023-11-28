@@ -11,7 +11,7 @@ public class Disolve : MonoBehaviour
     float EndValue = 1.0f;
     float ValueToLerp;
     float timeElapsed;
-    [SerializeField] private float lerpDuration = 1.0f;
+    [SerializeField] private float lerpDuration = 3.0f;
     public bool bDis=false;
 
     private void Start()
