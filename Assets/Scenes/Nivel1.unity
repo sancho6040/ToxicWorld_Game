@@ -548,7 +548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 123.400024, y: -87.600006}
+  m_AnchoredPosition: {x: 123.40015, y: -87.599976}
   m_SizeDelta: {x: 119, y: 113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1068673168
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
+  m_VolumeTrigger: {fileID: 832575519}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 2
@@ -923,8 +923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3497971dbcd154fb62534bbe0839d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadVida: -0.1
-  cantidadConta: 0.1
+  cantidadVida: -0.01
+  cantidadConta: 0.01
 --- !u!1 &1585307168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,8 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cf19ab445471b429e29b84d4867455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadVida: 20
-  cantidadConta: -20
+  cantidadVida: 10
+  cantidadConta: -10
 --- !u!1 &1851357248
 GameObject:
   m_ObjectHideFlags: 0
