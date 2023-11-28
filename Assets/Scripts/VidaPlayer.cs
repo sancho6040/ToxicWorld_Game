@@ -39,7 +39,7 @@ public class VidaPlayer : MonoBehaviour
         vida = Mathf.Clamp(vida, 0, 100);
         barraVida.fillAmount = vida / 100;
 
-        if (vida <= 50)
+        if (vida <= 70)
         {
             grain.active=true;
         }
@@ -48,7 +48,7 @@ public class VidaPlayer : MonoBehaviour
             grain.active = false;
         }
 
-        if (vida <= 30)
+        if (vida <= 50)
         {
             depth.active = true;
         }
@@ -57,7 +57,7 @@ public class VidaPlayer : MonoBehaviour
             depth.active = false;
         }
 
-        if (vida <= 20)
+        if (vida <= 35)
         {
             chromatic.active = true;
         }
@@ -66,7 +66,7 @@ public class VidaPlayer : MonoBehaviour
             chromatic.active = false;
         }
 
-        if (vida <= 10)
+        if (vida <= 25)
         {
             vignette.active = true;
         }
