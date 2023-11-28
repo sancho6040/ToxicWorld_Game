@@ -1,25 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class VidaPlayer : MonoBehaviour
 {
     public float vida = 100;
+    public float conta = 0;
     public Canvas canva;
     public Image barraVida;
+    public Image barraConta;
     public GameObject player;
     public GameObject camara;
     public GameObject volumen;
     public Volume volumeScene;
     public VolumeProfile profiles;
-    public Vignette vignette;
-    public ChromaticAberration chromatic;
-    public FilmGrain grain;
-    public DepthOfField depth;
+    private Vignette vignette;
+    private ChromaticAberration chromatic;
+    private FilmGrain grain;
+    private DepthOfField depth;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class VidaPlayer : MonoBehaviour
         vida = Mathf.Clamp(vida, 0, 100);
         barraVida.fillAmount = vida / 100;
 
-        if (vida <= 50)
+        if (vida <= 70)
         {
             grain.active=true;
         }
@@ -48,7 +48,7 @@ public class VidaPlayer : MonoBehaviour
             grain.active = false;
         }
 
-        if (vida <= 30)
+        if (vida <= 50)
         {
             depth.active = true;
         }
@@ -57,7 +57,7 @@ public class VidaPlayer : MonoBehaviour
             depth.active = false;
         }
 
-        if (vida <= 20)
+        if (vida <= 35)
         {
             chromatic.active = true;
         }
@@ -66,7 +66,7 @@ public class VidaPlayer : MonoBehaviour
             chromatic.active = false;
         }
 
-        if (vida <= 10)
+        if (vida <= 25)
         {
             vignette.active = true;
         }
@@ -78,7 +78,42 @@ public class VidaPlayer : MonoBehaviour
         if (vida <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(0);
         }
+
+        conta = Mathf.Clamp(conta, 0, 100);
+        barraConta.fillAmount = conta / 100;
+
+        if (conta >= 0)
+        {
+
+        }
+
+        if (conta >= 20)
+        {
+
+        }
+
+        if (conta >= 40)
+        {
+
+        }
+
+        if (conta >= 60)
+        {
+
+        }
+
+        if (conta >= 80)
+        {
+
+        }
+
+        if (conta >= 100)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(0);
+        }
+
     }
 }
