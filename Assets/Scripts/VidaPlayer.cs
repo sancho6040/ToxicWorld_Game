@@ -112,7 +112,7 @@ public class VidaPlayer : MonoBehaviour
         if (conta >= 100)
         {
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
     }

@@ -13,11 +13,19 @@ public class Curacion : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            playerVida.vida += cantidadVida;
-            playerVida.conta += cantidadConta;
-          //  Destroy(gameObject);
-        }
+        //if (other.tag == "Player")
+        //{
+        //    playerVida.vida += cantidadVida;
+        //    playerVida.conta += cantidadConta;
+        //  //  Destroy(gameObject);
+        //}
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("Hola");
+        playerVida.vida += cantidadVida;
+        playerVida.conta += cantidadConta;
+
     }
 }

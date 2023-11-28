@@ -7,9 +7,14 @@ public class Prop : MonoBehaviour
     public Item itemSO;
     public Disolve disolve;
 
+    public bool bIsBone = false;
+
     private void Awake()
     {
-        disolve = GetComponent<Disolve>();
+        if (bIsBone)
+        {
+            disolve = GetComponent<Disolve>();
+        }
     }
 
     public void PickupItem()
@@ -17,11 +22,20 @@ public class Prop : MonoBehaviour
         bool result = InventoryManager.Instance.AddItem(itemSO);
         Debug.Log(result ? "item added" : "item not added");
         //----------- lo de camilo xd -------
-        if(result)
+        if (result)
         {
-            disolve.bDis = true;
+            if (bIsBone)
+            {
+                disolve.bDis = true;
+            }
+            else
+            {
+
+                Debug.Log("destroy");
+                Destroy(gameObject);
+            }
+
         }
 
-        //Destroy(gameObject);
     }
 }

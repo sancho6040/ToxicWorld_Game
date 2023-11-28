@@ -16,8 +16,8 @@ public class Disolve : MonoBehaviour
 
     private void Start()
     {
-        m_Material= GetComponent<Renderer>().material;
-        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+        m_Material= GetComponentInChildren<Renderer>().material;
+        //print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
     }
     void Update()
     {
@@ -47,7 +47,7 @@ public class Disolve : MonoBehaviour
         //Destroy the instance
         Destroy(m_Material);
         //Output the amount of materials to show if the instance was deleted
-        print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
+        //print("Materials " + Resources.FindObjectsOfTypeAll(typeof(Material)).Length);
 
     }
 }
