@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cf19ab445471b429e29b84d4867455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadVida: 20
-  cantidadConta: -15
+  cantidadVida: 30
+  cantidadConta: 30
 --- !u!114 &3435955496074181843
 MonoBehaviour:
   m_ObjectHideFlags: 0

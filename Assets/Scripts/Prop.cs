@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Prop : MonoBehaviour
 {
+              
     public Item itemSO;
     public Disolve disolve;
-
+   
     public bool bIsBone = false;
 
     private void Awake()
@@ -15,6 +17,8 @@ public class Prop : MonoBehaviour
         {
             disolve = GetComponent<Disolve>();
         }
+        
+        
     }
 
     public void PickupItem()
@@ -26,14 +30,18 @@ public class Prop : MonoBehaviour
         {
             if (bIsBone)
             {
-                disolve.bDis = true;
+                Debug.Log("Si se activo"); 
+                disolve.bDis=true;
+              
+
             }
             else
             {
-
                 Debug.Log("destroy");
                 Destroy(gameObject);
             }
+           
+           
 
         }
 
