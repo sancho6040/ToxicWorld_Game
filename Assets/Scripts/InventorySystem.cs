@@ -54,6 +54,12 @@ public class InventorySystem : MonoBehaviour
             propToPickUp = other.gameObject.GetComponent<Prop>();
             _thirdPersonController.bCanPickup = true;
         }
+        else if (other.CompareTag("Bones")) 
+        {
+            setKeyUIstate(true);
+            propToPickUp = other.gameObject.GetComponent<Prop>();
+            _thirdPersonController.bCanPickup = true;
+        }
 
     }
 
@@ -65,7 +71,14 @@ public class InventorySystem : MonoBehaviour
             propToPickUp = null;
             _thirdPersonController.bCanPickup = false;
         }
+        else if (other.CompareTag("Bones")) 
+        {
+            setKeyUIstate(false);
+            propToPickUp = null;
+            _thirdPersonController.bCanPickup = false;
+        }
     }
+   
 
     public void setKeyUIstate(bool newState)
     {
