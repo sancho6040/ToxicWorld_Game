@@ -71,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: fa04d468a0c3e6f468df9cadb4abc337, type: 2}
   disolve: {fileID: 0}
+  BonesCount: []
   bIsBone: 0
 --- !u!114 &5428916946804598103
 MonoBehaviour:
@@ -84,8 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cf19ab445471b429e29b84d4867455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidadVida: 50
-  cantidadConta: -50
+  cantidadVida: 80
+  cantidadConta: 80
 --- !u!82 &2799429288497259059
 AudioSource:
   m_ObjectHideFlags: 0
