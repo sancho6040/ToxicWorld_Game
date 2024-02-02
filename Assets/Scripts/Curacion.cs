@@ -23,9 +23,7 @@ public class Curacion : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Hola");
         playerVida.vida += cantidadVida;
-        playerVida.conta += cantidadConta;
-
+        playerVida.conta -= cantidadConta;
     }
 }
